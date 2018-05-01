@@ -1,0 +1,27 @@
+- Instruction: 
+Please follow all bellow steps: using cmd
+
+composer update
+rename .env.example with .env
+configure database on .env file
+create a new database with name employees_db
+create new tables with: php artisan migrate
+create default user for system with: php artisan db:seed
+php artisan key:generate
+Execute: php artisan config:clear
+Execute: php artisan serve
+default usename: admin@gmail.com/admin
+
+
+
+
+
+google password: hxzrgphrrhyqfsaf
+
+<?php $role = Auth::user()->username; ?>
+@if($role=='hatim'||$role=='admin') @endif
+
+
+
+ <?php $role = Auth::user()->load('role')->role->role_code ?>
+ @if($role == 'HOD')
